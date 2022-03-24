@@ -1,0 +1,15 @@
+.van-cell-group {
+	background: var(--van-cell-group-background-color, #fff);
+	
+	&__title {
+		padding: var(--van-cell-group-title-padding, 16px 16px 8px);
+		color: var(--van-cell-group-title-color, #969799);
+		font-size: var(--van-cell-group-title-font-size, 14px);
+		line-height: var(--van-cell-group-title-line-height, 16px);
+	}
+	&--inset {
+		margin: var(--van-cell-group-inset-padding, 0 16px);
+		border-radius: var(--van-cell-group-inset-border-radius, 8px);
+		overflow: hidden;
+	}
+}
