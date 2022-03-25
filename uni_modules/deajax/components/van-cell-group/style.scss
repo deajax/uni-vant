@@ -1,15 +1,42 @@
 .van-cell-group {
+	position: relative;
 	background: var(--van-cell-group-background-color, #fff);
-	
+
+	&::before {
+		position: absolute;
+		z-index: 1;
+		box-sizing: border-box;
+		content: ' ';
+		pointer-events: none;
+		top: -50%;
+		right: -50%;
+		bottom: -50%;
+		left: -50%;
+		border: 0 solid var(--van-border-color, #ebedf0);
+		transform: scale(0.5);
+		border-width: 1px 0;
+	}
+
 	&__title {
 		padding: var(--van-cell-group-title-padding, 16px 16px 8px);
 		color: var(--van-cell-group-title-color, #969799);
 		font-size: var(--van-cell-group-title-font-size, 14px);
 		line-height: var(--van-cell-group-title-line-height, 16px);
 	}
+	
 	&--inset {
 		margin: var(--van-cell-group-inset-padding, 0 16px);
 		border-radius: var(--van-cell-group-inset-border-radius, 8px);
 		overflow: hidden;
+		
+		&::before {
+			display: none;
+		}
+	}
+	
+	&--borderless {
+		&::before {
+			display: none;
+		}
 	}
 }

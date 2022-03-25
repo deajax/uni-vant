@@ -36,6 +36,11 @@
 <script>
 export default {
 	name: 'van-cell',
+	options: {
+		multipleSlots: true,
+		styleIsolation: "shared",
+		virtualHost: true,
+	},
 	mixins: {},
 	props: {
 		title: {

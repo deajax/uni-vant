@@ -22,6 +22,10 @@
 		transform: scaleY(0.5);
 		transform-origin: center;
 	}
+	
+	&:last-child::after {
+		display: none;
+	}
 
 	&__title,
 	&__value {

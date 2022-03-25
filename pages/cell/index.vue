@@ -3,7 +3,7 @@
 		<view class="demo-block">
 			<van-cell-group title="基础用法">
 				<van-cell title="单元格" value="内容"></van-cell>
-				<van-cell title="单元格" value="内容" label="描述信息" :border="false"></van-cell>
+				<van-cell title="单元格" value="内容" label="描述信息"></van-cell>
 			</van-cell-group>
 		</view>
 
@@ -15,7 +15,7 @@
 		</view>
 
 		<view class="demo-block">
-			<van-cell-group title="单元格大小">
+			<van-cell-group title="单元格大小" :border="false">
 				<van-cell title="单元格" value="内容" size="large"></van-cell>
 				<van-cell title="单元格" value="内容" label="描述信息" size="large" :border="false"></van-cell>
 			</van-cell-group>
