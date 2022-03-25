@@ -8,7 +8,7 @@
 		<view :class="['van-cell__left-icon', icon]" v-if="icon"></view>
 		<slot v-else name="icon"></slot>
 
-		<view class="van-cell__title" v-if="title || label">
+		<view class="van-cell__title" :style="[titleWidth ? { flex: `0 0 ${titleWidth}` } : '']" v-if="title || label">
 			<text v-if="title">{{ title }}</text>
 			<view class="van-cell__label" v-if="label || $slots.label">
 				<template v-if="label">
@@ -82,6 +82,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		titleWidth: {
+			type: String,
+			default: ''
+		}
 	},
 	computed: {
 		borderClass() {
@@ -95,7 +99,7 @@ export default {
 		},
 		sizeClass() {
 			return this.size === 'large' ? 'van-cell--large' : '';
-		},
+		}
 	},
 	methods: {
 		onClick(e) {
