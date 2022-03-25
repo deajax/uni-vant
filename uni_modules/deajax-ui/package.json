@@ -1,6 +1,6 @@
 {
-  "id": "van-cell",
-  "name": "deajax",
+  "id": "deajax-ui",
+  "name": "deajax-ui",
   "displayName": "模仿van-cell的自用cell组件",
   "version": "0.1.0",
   "description": "自用组件，根据van-cell组件的属性和样式，模仿自写的uni组件",

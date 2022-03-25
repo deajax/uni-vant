@@ -15,6 +15,15 @@
             }
             
         }
+        ,{
+            "path" : "uni_modules/deajax-ui/components/deajax-ui/deajax-ui",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -25,7 +34,7 @@
 	"easycom": {
 		"autoscan": true,
 		"custom": {
-			"^van-(.*)": "@/uni_modules/deajax/components/van-$1/index.vue"
+			"^van-(.*)": "@/uni_modules/deajax-ui/components/van-$1/index.vue"
 		}
 	}
 }

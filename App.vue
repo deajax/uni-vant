@@ -1,5 +1,5 @@
 <script>
-	import '@/uni_modules/deajax/remixicon/remixicon.scss';
+	import '@/uni_modules/deajax-ui/remixicon/remixicon.scss';
 	
 	export default {
 		onLaunch: function() {
