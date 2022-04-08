@@ -131,6 +131,10 @@ export default {
 				uni.reLaunch({
 					url: this.url
 				});
+			} else if (this.linkType == 'redirectTo') {
+				uni.redirectTo({
+					url: this.url
+				});
 			}
 			this.stop && this.preventEvent(e);
 		}
