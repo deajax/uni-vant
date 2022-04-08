@@ -1,30 +1,37 @@
 {
-	"pages": [
-		{
-			"path": "pages/cell/index",
-			"style": {
-				"navigationBarTitleText": "van-cell"
-			}
+	"pages": [{
+		"path": "pages/cell/index",
+		"style": {
+			"navigationBarTitleText": "van-cell"
 		}
-	    ,{
-            "path" : "pages/blank/blank",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "uni_modules/deajax-ui/components/deajax-ui/deajax-ui",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/blank/blank",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/tabbar/page1",
+		"style": {
+			"navigationBarTitleText": "tabbar 1"
+		}
+	}, {
+		"path": "pages/tabbar/page2",
+		"style": {
+			"navigationBarTitleText": "tabbar 2"
+		}
+	}],
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/tabbar/page1",
+				"text": "page1"
+			},
+			{
+				"pagePath": "pages/tabbar/page2",
+				"text": "page2"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

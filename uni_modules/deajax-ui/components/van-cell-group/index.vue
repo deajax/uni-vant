@@ -4,7 +4,7 @@
 			{{ title }}
 			<slot name="title"></slot>
 		</view>
-		<view :class="['van-cell-group', insetClass, borderClass]"><slot /></view>
+		<view :class="['van-cell-group', insetClass, borderClass]" @click="onClick"><slot /></view>
 	</view>
 </template>
 
@@ -13,8 +13,8 @@ export default {
 	name: 'van-cell-group',
 	options: {
 		multipleSlots: true,
-		styleIsolation: "shared",
-		virtualHost: true,
+		styleIsolation: 'shared',
+		virtualHost: true
 	},
 	props: {
 		title: {
@@ -28,15 +28,20 @@ export default {
 		border: {
 			type: Boolean,
 			default: true
-		},
+		}
 	},
 	computed: {
 		insetClass() {
-			return this.inset ? 'van-cell-group--inset' : ''
+			return this.inset ? 'van-cell-group--inset' : '';
 		},
 		borderClass() {
 			return this.border ? '' : 'van-cell-group--borderless';
-		},
+		}
+	},
+	methods: {
+		onClick(res) {
+			this.$emit('click', res);
+		}
 	}
 };
 </script>
