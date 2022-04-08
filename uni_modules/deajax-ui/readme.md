@@ -56,7 +56,7 @@
 | ---------- | ---------------------------------------------------------- |
 | value      | 自定义value显示内容，如果设置了value属性则不生效           |
 | title      | 自定义title显示内容，如果设置了title属性则不生效           |
-| label      | 自定义label显示内容，需要设置 use-label-slot属性           |
+| label      | 自定义label显示内容           |
 | icon       | 自定义icon显示内容，如果设置了icon属性则不生效             |
 | right-icon | 自定义右侧按钮，默认是arrow，如果设置了is-link属性则不生效 |
 | extra      | 自定义右侧额外内容                                         |
