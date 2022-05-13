@@ -1,6 +1,6 @@
 <template>
 	<view
-		:class="['van-cell', borderClass, centerClass, clickableClass, sizeClass]"
+		:class="['van-cell', borderClass, centerClass, sizeClass]"
 		:hover-class="!disabled && (clickable || isLink) ? 'van-cell--clickable' : ''"
 		hover-stay-time="70"
 		@click="onClick"
@@ -11,7 +11,7 @@
 		<view
 			class="van-cell__title"
 			:style="[titleWidth ? { flex: `0 0 ${titleWidth}` } : '']"
-			v-if="title || label"
+			v-if="title || label || $slots.title"
 		>
 			<text v-if="title">{{ title }}</text>
 			<slot v-else-if="$slots.title" name="title" />
@@ -99,6 +99,10 @@ export default {
 			type: String,
 			default: 'navigateTo'
 		},
+		disabled: {
+			type: Boolean,
+			default: false
+		}
 	},
 	computed: {
 		borderClass() {
@@ -106,9 +110,6 @@ export default {
 		},
 		centerClass() {
 			return this.center ? 'van-cell--center' : '';
-		},
-		clickableClass() {
-			return this.clickable ? 'van-cell--clickable' : '';
 		},
 		sizeClass() {
 			return this.size === 'large' ? 'van-cell--large' : '';
@@ -118,7 +119,8 @@ export default {
 		onClick(e) {
 			if (this.disabled) return;
 			this.$emit('click', e);
-
+			this.stop && this.preventEvent(e);
+			
 			if (this.linkType == 'navigateTo') {
 				uni.navigateTo({
 					url: this.url
@@ -136,7 +138,6 @@ export default {
 					url: this.url
 				});
 			}
-			this.stop && this.preventEvent(e);
 		}
 	}
 };

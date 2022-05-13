@@ -1,0 +1,151 @@
+$color-primary: #ff4b08;
+
+.van-card {
+	.van-cell {
+		padding: 12px 16px;
+		
+		&__title {
+			overflow: hidden;
+		}
+		
+		&__label {
+			margin-top: 0;
+		}
+	}
+
+	&__tag {
+		position: absolute;
+		z-index: 2;
+		top: 4px;
+		left: 4px;
+		font-size: 10px;
+		line-height: 13px;
+		padding: 2px 4px;
+		border-radius: 4px;
+		background: var(--van-card-primary-color, $color-primary);
+		color: white;
+	}
+
+	&__thumb {
+		position: relative;
+		overflow: hidden;
+		flex: 0 0 80px;
+		width: 80px;
+		height: 80px;
+		border-radius: 6px;
+		margin-right: var(--van-card-thumb-gap, 12px);
+
+		image {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__top {
+		flex: 1;
+		display: flex;
+
+		&-content {
+			flex: 1;
+			overflow: hidden;
+		}
+
+		&-extra {
+			flex: 0 0 auto;
+		}
+	}
+
+	&__title,
+	&__desc {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__desc {
+		font-size: 12px;
+		color: var(--van-card-desc-color, #646566);
+		line-height: 1.25;
+	}
+
+	&__tags {
+		font-size: 12px;
+		line-height: 1.2;
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		line-height: 20px;
+	}
+
+	&__price {
+		color: var(--van-card-primary-color, $color-primary);
+
+		&::before {
+			content: '¥';
+		}
+	}
+
+	&__origin-price {
+		margin-left: 8px;
+		color: var(--van-card-origin-price-color, #969799);
+		font-size: var(--van-card-origin-price-font-size, 10px);
+		text-decoration: line-through;
+
+		&::before {
+			content: '¥';
+		}
+	}
+
+	&__number {
+		display: flex;
+		align-items: center;
+		line-height: 20px;
+		margin-left: auto;
+		color: var(--van-card-number-color, #969799);
+
+		>text::before {
+			content: '\EB99';
+			font-family: remixicon !important;
+			font-style: normal;
+			font-size: 12px;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			position: relative;
+			top: 2px;
+		}
+	}
+
+	&.van-card--vertical {
+		.van-cell {
+			flex-direction: column;
+		}
+
+		.van-card__thumb {
+			flex: auto;
+			width: 100%;
+			height: 0;
+			padding-bottom: 100%;
+			margin-right: 0;
+			margin-bottom: var(--van-card-thumb-gap, 8px);
+
+			image {
+				position: absolute;
+				z-index: 1;
+			}
+		}
+
+		.van-card__bottom {
+			margin-top: 4px;
+		}
+	}
+}

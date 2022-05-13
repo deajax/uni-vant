@@ -1,0 +1,212 @@
+.van-tabs {
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+
+	&-border {
+		position: relative;
+
+		&::after {
+			border-top: 1px solid #ebedf0;
+			border-bottom: 1px solid #ebedf0;
+			bottom: -50%;
+			box-sizing: border-box;
+			content: ' ';
+			left: -50%;
+			pointer-events: none;
+			position: absolute;
+			right: -50%;
+			top: -50%;
+			transform: scale(0.5);
+			transform-origin: center;
+		}
+	}
+
+	&__wrap {
+		display: flex;
+		overflow: hidden;
+
+		&--scrollable .van-tab {
+			flex: 0 0 22%;
+		}
+
+		&--scrollable .van-tab--complete {
+			flex: 1 0 auto !important;
+			padding: 0 12px;
+		}
+
+		&--scrollable .van-tabs__nav--complete {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+	}
+
+	&__scroll {
+		/* #ifdef MP-ALIPAY */
+		width: 100%;
+		/* #endif */
+		background-color: var(--tabs-nav-background-color, #fff);
+
+		&--line {
+			box-sizing: initial;
+			height: calc(100% + 15px);
+		}
+
+		&--card {
+			border: 1px solid var(--tabs-default-color, #ee0a24);
+			border-radius: 2px;
+			box-sizing: border-box;
+			margin: 0 var(--padding-md, 16px);
+			width: calc(100% - var(--padding-md, 16px) * 2);
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		position: relative;
+		-webkit-user-select: none;
+		user-select: none;
+
+		&--card {
+			box-sizing: border-box;
+			height: var(--tabs-card-height, 30px);
+		}
+	}
+
+	&--card {
+		.van-tab {
+			border-right: 1px solid var(--tabs-default-color, #ee0a24);
+			color: var(--tabs-default-color, #ee0a24);
+			line-height: var(--tabs-card-height, 30px);
+
+			&:last-child {
+				border-right: none;
+			}
+
+			&.van-tab--active {
+				background-color: var(--tabs-default-color, #ee0a24);
+				color: #fff;
+			}
+
+			&--disabled {
+				color: var(--tab-disabled-text-color, #c8c9cc);
+			}
+
+			&__wrap {
+				height: var(--tabs-card-height, 30px);
+			}
+		}
+	}
+
+	&__line {
+		transition: all 0.3s;
+		background-color: var(--tabs-bottom-bar-color, #ee0a24);
+		border-radius: var(--tabs-bottom-bar-height, 3px);
+		bottom: 0;
+		height: var(--tabs-bottom-bar-height, 3px);
+		left: 0;
+		position: absolute;
+		z-index: 1;
+	}
+
+	&__track {
+		height: 100%;
+		position: relative;
+		width: 100%;
+
+		&--animated {
+			display: flex;
+			transition-property: left;
+			transition-duration: 0.3s;
+			width: fit-content;
+
+			.van-tab__pane {
+				width: 100vw;
+				height: 0;
+				display: block !important;
+
+				&.van-tab__pane--active {
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&__content {
+		overflow: hidden;
+	}
+
+	&--line {
+		.van-tabs__wrap {
+			height: var(--tabs-line-height, 44px);
+		}
+	}
+}
+
+.van-tab {
+	box-sizing: border-box;
+	color: var(--tab-text-color, #646566);
+	cursor: pointer;
+	flex: 1;
+	font-size: var(--tab-font-size, 14px);
+	line-height: var(--tabs-line-height, 44px);
+	min-width: 0;
+	padding: 0 5px;
+	position: relative;
+	text-align: center;
+
+	&--active {
+		color: var(--tab-active-text-color, #323233);
+		font-weight: var(--font-weight-bold, 500);
+	}
+
+	&--disabled {
+		color: var(--tab-disabled-text-color, #c8c9cc);
+	}
+}
+
+.van-info {
+	align-items: center;
+	background-color: var(--info-background-color, #ee0a24);
+	border: var(--info-border-width, 1px) solid #fff;
+	border-radius: var(--info-size, 16px);
+	box-sizing: border-box;
+	color: var(--info-color, #fff);
+	display: inline-flex;
+	font-family: var(--info-font-family, -apple-system-font, Helvetica Neue, Arial, sans-serif);
+	font-size: var(--info-font-size, 12px);
+	height: var(--info-size, 16px);
+	justify-content: center;
+	min-width: var(--info-size, 16px);
+	padding: var(--info-padding, 0 3px);
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translate(50%, -50%);
+	transform-origin: 100%;
+	white-space: nowrap;
+
+	&--dot {
+		background-color: var(--info-dot-color, #ee0a24);
+		border-radius: 100%;
+		height: var(--info-dot-size, 8px);
+		min-width: 0;
+		width: var(--info-dot-size, 8px);
+	}
+}
+
+.van-tab__title__info {
+	position: relative !important;
+	top: -1px !important;
+	transform: translateX(0) !important;
+	margin-left: 4px;
+}
+
+.van-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

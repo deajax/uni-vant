@@ -67,20 +67,27 @@
 		<view class="demo-block">
 			<van-cell-group title="使用插槽">
 				<van-cell is-link>
-					<view slot="icon">icon</view>
+					<view slot="icon">icon slot</view>
 					<view slot="title">
-						<view class="van-cell-text">单元格</view>
-						<text>描述信息</text>
+						<view class="van-cell-text">单元格 slot</view>
+						<text>描述信息 slot</text>
 					</view>
-					<view slot="value">内容</view>
-					<view slot="extra">extra</view>
+					<view slot="value">内容 slot</view>
+					<view slot="extra">extra slot</view>
 				</van-cell>
 
 				<van-cell title="单元格">
-					<view slot="icon">icon</view>
-					<view slot="label">描述信息</view>
-					<view slot="value">内容</view>
-					<view slot="right-icon">right-icon</view>
+					<view slot="icon">icon slot</view>
+					<view slot="label">描述信息slot</view>
+					<view slot="value">内容slot</view>
+					<view slot="right-icon">right-icon slot</view>
+				</van-cell>
+				
+				<van-cell>
+					<view slot="title">单元格slot</view>
+					<view slot="label">描述信息slot</view>
+					<view slot="value">内容slot</view>
+					<view slot="right-icon">right-icon slot</view>
 				</van-cell>
 				
 				<van-cell label="描述信息">

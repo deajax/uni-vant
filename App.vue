@@ -1,21 +1,16 @@
 <script>
-	import '@/uni_modules/deajax-ui/remixicon/remixicon.scss';
-	
-	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+import '@/uni_modules/deajax-ui/remixicon/remixicon.scss';
+
+export default {
+	onLaunch: function() {},
+	onShow: function() {},
+	onHide: function() {}
+};
 </script>
 
 <style>
-	page {
-		background: #f5f5f5;
-	}
+page {
+	background: #f5f5f5;
+	overflow-x: hidden;
+}
 </style>

@@ -1,26 +1,46 @@
 {
-	"pages": [{
-		"path": "pages/cell/index",
-		"style": {
-			"navigationBarTitleText": "van-cell"
+	"pages": [
+		// components
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "vant for uni"
+			}
+		}, {
+			"path": "pages/cell/index",
+			"style": {
+				"navigationBarTitleText": "单元格"
+			}
+		}, {
+			"path": "pages/card/card",
+			"style": {
+				"navigationBarTitleText": "商品卡片"
+			}
+		},
+		// demo page
+		{
+			"path": "pages/blank/blank",
+			"style": {
+				"navigationBarTitleText": "blank"
+			}
+		}, {
+			"path": "pages/tabbar/page1",
+			"style": {
+				"navigationBarTitleText": "tabbar 1"
+			}
+		}, {
+			"path": "pages/tabbar/page2",
+			"style": {
+				"navigationBarTitleText": "tabbar 2"
+			}
+		}, {
+			"path": "pages/tabs/tabs",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 		}
-	}, {
-		"path": "pages/blank/blank",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
-	}, {
-		"path": "pages/tabbar/page1",
-		"style": {
-			"navigationBarTitleText": "tabbar 1"
-		}
-	}, {
-		"path": "pages/tabbar/page2",
-		"style": {
-			"navigationBarTitleText": "tabbar 2"
-		}
-	}],
+	],
 	"tabBar": {
 		"list": [{
 				"pagePath": "pages/tabbar/page1",
@@ -35,7 +55,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#F8F8F8"
 	},
 	"easycom": {

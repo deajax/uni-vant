@@ -1,0 +1,9 @@
+.van-tab__pane {
+	-webkit-overflow-scrolling: touch;
+	box-sizing: border-box;
+	overflow-y: auto;
+
+	&--active {
+		height: auto;
+	}
+}

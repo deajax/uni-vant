@@ -1,11 +1,10 @@
 {
   "id": "deajax-ui",
   "name": "deajax-ui",
-  "displayName": "模仿van-cell的自用cell组件",
-  "version": "0.1.2",
-  "description": "自用组件，根据van-cell组件的属性和样式，模仿自写的uni组件",
+  "displayName": "模仿vant的自用uni组件",
+  "version": "0.3.2",
+  "description": "自用组件，根据vant组件的属性和样式，模仿自写的uni组件",
   "keywords": [
-    "van-cell",
     "vant",
     "deajax"
 ],
@@ -30,9 +29,9 @@
       "qq": ""
     },
     "declaration": {
-      "ads": "无",
+      "ads": "插件不包含任何广告",
       "data": "插件不采集任何数据",
-      "permissions": "无"
+      "permissions": "插件不需要任何权限"
     },
     "npmurl": ""
   },
@@ -54,10 +53,10 @@
           "app-nvue": "n"
         },
         "H5-mobile": {
-          "Safari": "u",
-          "Android Browser": "u",
-          "微信浏览器(Android)": "u",
-          "QQ浏览器(Android)": "u"
+          "Safari": "y",
+          "Android Browser": "y",
+          "微信浏览器(Android)": "y",
+          "QQ浏览器(Android)": "y"
         },
         "H5-pc": {
           "Chrome": "y",
