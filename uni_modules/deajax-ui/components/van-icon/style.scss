@@ -1,0 +1,10 @@
+.van-icon {
+	position: relative;
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	
+	&:before {
+		display: inline-block;
+	}
+}

@@ -1,0 +1,173 @@
+.van-button {
+	-webkit-text-size-adjust: 100%;
+	align-items: center;
+	-webkit-appearance: none;
+	border-radius: var(--button-border-radius, 4px);
+	box-sizing: border-box;
+	display: inline-flex;
+	font-size: var(--button-default-font-size, 16px);
+	height: var(--button-default-height, 44px);
+	justify-content: center;
+	line-height: var(--button-line-height, 20px);
+	padding: 0;
+	position: relative;
+	text-align: center;
+	transition: opacity 0.2s;
+	vertical-align: middle;
+
+	&:before {
+		background-color: #000;
+		border: inherit;
+		border-color: #000;
+		border-radius: inherit;
+		content: ' ';
+		height: 100%;
+		left: 50%;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+	}
+	&:after {
+		border-width: 0;
+	}
+	&--active {
+		&:before {
+			opacity: 0.15;
+		}
+	}
+
+	&--unclickable {
+		&:after {
+			display: none;
+		}
+	}
+
+	&--default {
+		background: var(--button-default-background-color, #fff);
+		border: var(--button-border-width, 1px) solid var(--button-default-border-color, #ebedf0);
+		color: var(--button-default-color, #323233);
+	}
+	&--primary {
+		background: var(--button-primary-background-color, #1989fa);
+		border: var(--button-border-width, 1px) solid var(--button-primary-border-color, #1989fa);
+		color: var(--button-primary-color, #fff);
+	}
+	&--success {
+		background: var(--button-info-background-color, #07c160);
+		border: var(--button-border-width, 1px) solid var(--button-info-border-color, #07c160);
+		color: var(--button-info-color, #fff);
+	}
+	&--danger {
+		background: var(--button-danger-background-color, #ee0a24);
+		border: var(--button-border-width, 1px) solid var(--button-danger-border-color, #ee0a24);
+		color: var(--button-danger-color, #fff);
+	}
+	&--warning {
+		background: var(--button-warning-background-color, #ff976a);
+		border: var(--button-border-width, 1px) solid var(--button-warning-border-color, #ff976a);
+		color: var(--button-warning-color, #fff);
+	}
+
+	&--plain {
+		background: var(--button-plain-background-color, #fff);
+
+		&.van-button--primary {
+			color: var(--button-primary-background-color, #1989fa);
+		}
+		&.van-button--success {
+			color: var(--button-info-background-color, #07c160);
+		}
+		&.van-button--danger {
+			color: var(--button-danger-background-color, #ee0a24);
+		}
+		&.van-button--warning {
+			color: var(--button-warning-background-color, #ff976a);
+		}
+	}
+	&--large {
+		height: var(--button-large-height, 50px);
+		width: 100%;
+	}
+	&--normal {
+		font-size: var(--button-normal-font-size, 14px);
+		padding: 0 15px;
+	}
+	&--small {
+		font-size: var(--button-small-font-size, 12px);
+		height: var(--button-small-height, 30px);
+		min-width: var(--button-small-min-width, 60px);
+		padding: 0 var(--padding-xs, 8px);
+	}
+	&--mini {
+		display: inline-block;
+		font-size: var(--button-mini-font-size, 10px);
+		height: var(--button-mini-height, 22px);
+		min-width: var(--button-mini-min-width, 50px);
+
+		+ .van-button--mini {
+			margin-left: 5px;
+		}
+	}
+	&--block {
+		display: flex;
+		width: 100%;
+		font-size: var(--button-block-font-size, 16px);
+		font-weight: var(--button-block-font-weight, 500);
+	}
+	&--round {
+		border-radius: var(--button-round-border-radius, 999px);
+	}
+	&--square {
+		border-radius: 0;
+	}
+	&--disabled {
+		opacity: var(--button-disabled-opacity, 0.5);
+	}
+	&__text {
+		display: inline;
+	}
+	&__icon + .van-button__text:not(:empty),
+	&__loading-text {
+		margin-left: 4px;
+	}
+	&__icon {
+		line-height: inherit !important;
+		min-width: 1em;
+		vertical-align: top;
+	}
+	&--hairline {
+		border-width: 0;
+		padding-top: 1px;
+
+		&:after {
+			border-color: inherit;
+			border-radius: calc(var(--button-border-radius, 4px) * 2);
+			border-width: 1px;
+		}
+
+		&.van-button--round:after {
+			border-radius: var(--button-round-border-radius, 999px);
+		}
+		&.van-button--square:after {
+			border-radius: 0;
+		}
+	}
+	&--loading {
+		
+	}
+	&__loading {
+		animation : van-rotate var(--loading-spinner-animation-duration, .8s) linear infinite;
+	}
+}
+
+@keyframes van-rotate {
+	0% {
+		transform: rotate(0deg)
+	}
+
+	to {
+		transform: rotate(1turn)
+	}
+}

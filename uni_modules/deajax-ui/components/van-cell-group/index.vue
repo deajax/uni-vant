@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	name: 'van-cell-group',
+	name: 'CellGroup',
 	options: {
 		multipleSlots: true,
 		styleIsolation: 'shared',

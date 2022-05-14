@@ -7,7 +7,7 @@
 				"navigationBarTitleText": "vant for uni"
 			}
 		}, {
-			"path": "pages/cell/index",
+			"path": "pages/cell/cell",
 			"style": {
 				"navigationBarTitleText": "单元格"
 			}
@@ -38,6 +38,41 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/button/button",
+			"style": {
+				"navigationBarTitleText": "按钮"
+			}
+		}, {
+			"path": "pages/icon/icon",
+			"style": {
+				"navigationBarTitleText": "图标"
+			}
+		}, {
+			"path": "pages/layout/layout",
+			"style": {
+				"navigationBarTitleText": "布局"
+			}
+		}, {
+			"path": "pages/style/style",
+			"style": {
+				"navigationBarTitleText": "内置样式"
+			}
+		}, {
+			"path": "pages/field/field",
+			"style": {
+				"navigationBarTitleText": "输入框"
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}, {
+			"path": "pages/stepper/stepper",
+			"style": {
+				"navigationBarTitleText": "步进器"
 			}
 		}
 	],

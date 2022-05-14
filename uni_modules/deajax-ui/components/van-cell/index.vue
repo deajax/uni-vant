@@ -40,7 +40,7 @@
 
 <script>
 export default {
-	name: 'van-cell',
+	name: 'Cell',
 	options: {
 		multipleSlots: true,
 		styleIsolation: 'shared',

@@ -66,7 +66,7 @@
 <script>
 import vanCell from '../van-cell/index.vue';
 export default {
-	name: 'van-card',
+	name: 'Card',
 	options: {
 		multipleSlots: true,
 		styleIsolation: 'shared',
