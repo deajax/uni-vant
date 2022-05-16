@@ -71,7 +71,7 @@ $color-primary: #ff4b08;
 
 	&__desc {
 		font-size: 12px;
-		color: var(--van-card-desc-color, #646566);
+		color: var(--van-card-desc-color, #969799);
 		line-height: 1.25;
 	}
 
@@ -145,7 +145,7 @@ $color-primary: #ff4b08;
 		}
 
 		.van-card__bottom {
-			margin-top: 4px;
+			margin-top: 8px;
 		}
 	}
 }

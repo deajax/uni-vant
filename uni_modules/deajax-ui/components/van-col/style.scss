@@ -1,0 +1,55 @@
+[class*="van-col-"] {
+    float     : left;
+    box-sizing: border-box;
+
+    .bgc {
+        height: 100%;
+    }
+}
+
+.van-col-auto {
+    flex     : 0 0 auto;
+    width    : auto;
+    max-width: 100%;
+}
+
+@for $i from 1 through 24 {
+    .van-col--#{$i} {
+        /* #ifdef APP-PLUS || H5 */
+        flex     : 0 0 calc(100%/24*#{$i});
+        max-width:calc(100%/24*#{$i});
+        /* #endif */
+        /* #ifdef MP */
+        width    : calc(100%/24 * #{$i});
+        /* #endif */
+    }
+
+    @if $i<6 {
+        .flex-#{$i} {
+            flex:#{$i};
+        }
+
+        .cols-#{$i} {
+            /* #ifdef MP-WEIXIN */
+            flex      :0 0 calc(100% / #{$i}) !important;
+            width     :calc(100% / #{$i}) !important;
+            box-sizing: border-box;
+
+            /* #endif */
+            /* #ifndef MP-WEIXIN */
+            .cols-item {
+                flex      :0 0 calc(100% / #{$i}) !important;
+                width     :calc(100% / #{$i}) !important;
+                box-sizing: border-box;
+            }
+
+            /* #endif */
+        }
+    }
+
+    @if $i<24 {
+        .van-col--offset-#{$i} {
+            margin-left:calc(100%/24*#{$i})
+        }
+    }
+}

@@ -2,26 +2,16 @@
 	"id": "deajax-ui",
 	"name": "deajax-ui",
 	"displayName": "模仿vant的uni组件",
-	"version": "0.3.6",
+	"version": "0.3.8",
 	"description": "自用组件，根据vant组件的属性和样式，模仿自写的uni组件",
 	"keywords": [
-		"vant",
-		"vant",
-		"cell",
-		"button",
-		"tab",
-		"tabs",
-		"card",
-		"shop",
-		"shopping",
-		"goods",
-		"icon",
-		"search",
-		"field",
-		"layout",
-		"step"
-	],
-	"repository": "https://github.com/deajax/uni-van-cell.git",
+        "vant",
+        "cell",
+        "tab",
+        "tabs",
+        "shop"
+    ],
+	"repository": "https://github.com/deajax/uni-vant.git",
 	"engines": {
 		"HBuilderX": "^3.1.6"
 	},
@@ -42,9 +32,9 @@
 			"qq": ""
 		},
 		"declaration": {
-			"ads": "插件不包含任何广告",
-			"data": "插件不采集任何数据",
-			"permissions": "插件不需要任何权限"
+			"ads": "不包含任何广告",
+			"data": "不采集任何数据",
+			"permissions": "不需要任何权限"
 		},
 		"npmurl": ""
 	},

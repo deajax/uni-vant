@@ -1,0 +1,51 @@
+.van-row {
+	display       : flex;
+	flex-direction: row;
+	box-sizing    : border-box;
+	flex-wrap     : wrap;
+
+	/* #ifdef MP */
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+
+	&::after {
+		clear: both;
+	}
+
+	/* #endif */
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.align-start {
+	align-items: flex-start
+}
+
+.align-center {
+	align-items: center
+}
+
+.align-end {
+	align-items: flex-end
+}

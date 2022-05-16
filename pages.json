@@ -55,11 +55,6 @@
 				"navigationBarTitleText": "布局"
 			}
 		}, {
-			"path": "pages/style/style",
-			"style": {
-				"navigationBarTitleText": "内置样式"
-			}
-		}, {
 			"path": "pages/field/field",
 			"style": {
 				"navigationBarTitleText": "输入框"

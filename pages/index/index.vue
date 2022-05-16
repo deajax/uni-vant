@@ -4,14 +4,13 @@
 			<van-cell title="Button 按钮" url="/pages/button/button" is-link />
 			<van-cell title="Cell 单元格" url="/pages/cell/cell" is-link />
 			<van-cell title="Icon 图标" url="/pages/icon/icon" is-link />
-			<!-- <van-cell title="Layout 布局" url="/pages/layout/layout" is-link /> -->
-			<van-cell title="Style 内置样式" url="/pages/style/style" is-link />
+			<van-cell title="Layout 布局" url="/pages/layout/layout" is-link />
 		</van-cell-group>
 
 		<van-cell-group title="表单组件">
 			<!-- <van-cell title="Field 输入框" url="/pages/field/field" is-link /> -->
 			<van-cell title="Search 搜索" url="/pages/search/search" is-link />
-			<!-- <van-cell title="Stepper 步进器" url="/pages/stepper/stepper" is-link /> -->
+			<van-cell title="Stepper 步进器" url="/pages/stepper/stepper" is-link />
 		</van-cell-group>
 
 		<van-cell-group title="展示组件">

@@ -538,3 +538,113 @@ export default {
 | label      | 自定义搜索框左侧文本                                         |
 | left-icon  | 自定义输入框左侧图标，需要在`use-left-icon-slot`为 true 时才会显示 |
 | right-icon | 自定义输入框右侧图标，需要在`use-right-icon-slot`为 true 时才会显示 |
+
+​    
+
+​    
+
+## Stepper 步进器
+
+示例：
+
+```vue
+<template>
+	<van-stepper :value="1" @change="onChange" />
+</template>
+
+<script>
+export default {
+	methods: {
+		onChange(value) {}
+	}
+};
+</script>
+```
+
+
+
+### Props
+
+| 参数           | 说明                                                         | 类型               | 默认值  |
+| :------------- | :----------------------------------------------------------- | :----------------- | :------ |
+| name           | 在表单内提交时的标识符                                       | *string*           | -       |
+| value          | 输入值                                                       | *string \| number* | 最小值  |
+| min            | 最小值                                                       | *string \| number* | `1`     |
+| max            | 最大值                                                       | *string \| number* | -       |
+| step           | 步长                                                         | *string \| number* | `1`     |
+| integer        | 是否只允许输入整数                                           | *boolean*          | `false` |
+| disabled       | 是否禁用                                                     | *boolean*          | `false` |
+| disable-input  | 是否禁用输入框                                               | *boolean*          | `false` |
+| async-change   | 是否开启异步变更，开启后需要手动控制输入值                   | *boolean*          | `false` |
+| input-width    | 输入框宽度，默认单位为 `px`                                  | *string \| number* | `32px`  |
+| button-size    | 按钮大小，默认单位为 `px`，输入框高度会和按钮大小保持一致    | *string \| number* | `28px`  |
+| show-plus      | 是否显示增加按钮                                             | *boolean*          | `true`  |
+| show-minus     | 是否显示减少按钮                                             | *boolean*          | `true`  |
+| decimal-length | 固定显示的小数位数                                           | *number*           | -       |
+| theme          | 样式风格，可选值为 `round`                                   | *string*           | -       |
+| disable-plus   | 是否禁用增加按钮                                             | *boolean*          | -       |
+| disable-minus  | 是否禁用减少按钮                                             | *boolean*          | -       |
+| always-embed   | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效) | *boolean*          | `false` |
+
+### Events
+
+| 事件名      | 说明                                               | 回调参数 |
+| :---------- | :------------------------------------------------- | :------- |
+| bind:change | 输入框值改变时触发的事件，参数为输入框当前的 value | -        |
+| bind:focus  | 输入框聚焦时触发的事件，参数为 event 对象          | -        |
+| bind:blur   | 输入框失焦时触发的事件，参数为 event 对象          | -        |
+
+### Slot
+
+| 名称  | 说明     |
+| :---- | :------- |
+| plus  | 加号按钮 |
+| minus | 减号按钮 |
+
+​    
+
+​    
+
+## Layout 布局
+
+示例：
+
+```vue
+<template>
+	<van-row>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+  </van-row>
+
+  <van-row>
+    <van-col span="4">span: 4</van-col>
+    <van-col span="10" offset="4">offset: 4, span: 10</van-col>
+  </van-row>
+
+	<van-row gutter="20" gap="20">
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+    <van-col span="8">span: 8</van-col>
+  </van-row>
+</template>
+```
+
+### Row Props
+
+| 参数   | 说明                            | 类型               | 默认值 |
+| :----- | :------------------------------ | :----------------- | :----- |
+| gutter | 列元素之间的间距（单位为 px）   | *string \| number* | -      |
+| gap    | 列元素之间的行间距（单位为 px） | *string \| number*    | -      |
+| justify | 水平排列方式，可选值为`start`、`end`、`center`、`around`、`between` | string | - |
+| align | 垂直对齐方式，可选值为`top`、`center`、`bottom` | string | - |
+
+### Col Props
+
+| 参数   | 说明           | 类型               | 默认值 |
+| :----- | :------------- | :----------------- | :----- |
+| span   | 列元素宽度     | *string \| number* | -      |
+| offset | 列元素偏移距离 | *string \| number* | -      |
