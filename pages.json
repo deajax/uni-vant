@@ -69,6 +69,11 @@
 			"style": {
 				"navigationBarTitleText": "步进器"
 			}
+		}, {
+			"path": "pages/tag/tag",
+			"style": {
+				"navigationBarTitleText": "标签"
+			}
 		}
 	],
 	"tabBar": {

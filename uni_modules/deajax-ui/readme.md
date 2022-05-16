@@ -1,3 +1,11 @@
+## 已实现组件：
+
+#### Button 按钮、Cell 单元格、Icon 图标、Layout 布局、Style 内置样式、Search 搜索、Stepper 步进器、Tag 标签、Tab 标签页、Card商品卡片
+
+​          
+
+
+>
 > 写在前面：
 >
 > 因为公司业务需要使用到uni，所以一直在找合适的组件库，换了好多套最后发现都不太应心，几乎都是属于那种“作者给配置好能想到的所有属性，傻瓜式上手，你要的属性我都有”，“所有属性都写在view的标签上”的类型，就像taillwind，很难复用（taillwind可以封装css样式，但是组件再封装组件复用就很啰嗦）。想通过css来改写一些样式就很难，比如把cell组件改成一个商品展示组件，10条属性需要写9条!important来覆盖scoped带来的样式隔离，想再适配其他样式或者维护也是难上加难。
@@ -588,11 +596,11 @@ export default {
 
 ### Events
 
-| 事件名      | 说明                                               | 回调参数 |
-| :---------- | :------------------------------------------------- | :------- |
-| bind:change | 输入框值改变时触发的事件，参数为输入框当前的 value | -        |
-| bind:focus  | 输入框聚焦时触发的事件，参数为 event 对象          | -        |
-| bind:blur   | 输入框失焦时触发的事件，参数为 event 对象          | -        |
+| 事件名  | 说明                                               | 回调参数 |
+| :------ | :------------------------------------------------- | :------- |
+| @change | 输入框值改变时触发的事件，参数为输入框当前的 value | -        |
+| @focus  | 输入框聚焦时触发的事件，参数为 event 对象          | -        |
+| @blur   | 输入框失焦时触发的事件，参数为 event 对象          | -        |
 
 ### Slot
 
@@ -648,3 +656,46 @@ export default {
 | :----- | :------------- | :----------------- | :----- |
 | span   | 列元素宽度     | *string \| number* | -      |
 | offset | 列元素偏移距离 | *string \| number* | -      |
+
+​    
+
+​    
+
+## Tag 标签
+
+示例：
+
+```vue
+<template>
+	<van-tag type="primary">标签</van-tag>
+  <van-tag type="success">标签</van-tag>
+  <van-tag type="danger">标签</van-tag>
+  <van-tag type="warning">标签</van-tag>
+</template>
+```
+
+### Props
+
+| 参数       | 说明                                                  | 类型      | 默认值  |
+| :--------- | :---------------------------------------------------- | :-------- | :------ |
+| type       | 类型，可选值为 `primary` `success` `danger` `warning` | *string*  | -       |
+| size       | 大小, 可选值为 `large` `medium`                       | *string*  | -       |
+| color      | 标签颜色                                              | *string*  | -       |
+| plain      | 是否为空心样式                                        | *boolean* | `false` |
+| round      | 是否为圆角样式                                        | *boolean* | `false` |
+| mark       | 是否为标记样式                                        | *boolean* | `false` |
+| text-color | 文本颜色，优先级高于 `color` 属性                     | *string*  | `white` |
+| closeable  | 是否为可关闭标签                                      | *boolean* | `false` |
+
+### Slot
+
+| 名称 | 说明                |
+| :--- | :------------------ |
+| -    | 自定义 Tag 显示内容 |
+
+### Events
+
+| 事件名 | 说明           | 回调参数 |
+| :----- | :------------- | :------- |
+| @close | 关闭标签时触发 | -        |
+| @click | 点击时触发     | -        |
