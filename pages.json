@@ -75,7 +75,31 @@
 				"navigationBarTitleText": "标签"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/divider/divider",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "分割线"
+            }
+            
+        }
+        ,{
+            "path" : "pages/empty/empty",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "空状态"
+            }
+            
+        }
+        ,{
+            "path" : "pages/grid/grid",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "宫格"
+            }
+            
+        }
+    ],
 	"tabBar": {
 		"list": [{
 				"pagePath": "pages/tabbar/page1",

@@ -1,0 +1,43 @@
+.van-empty {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 32px 0;
+
+	&__image {
+		height: 160px;
+		width: 160px;
+
+		&:empty {
+			display: none;
+		}
+
+		&__img {
+			height: 100%;
+			width: 100%;
+		}
+
+		&:not(:empty) + .van-empty__image {
+			display: none;
+		}
+	}
+
+	&__description {
+		color: #969799;
+		font-size: 14px;
+		line-height: 20px;
+		margin-top: 16px;
+		padding: 0 60px;
+
+		&:empty,
+		:not(:empty) + .van-empty__description {
+			display: none;
+		}
+	}
+
+	&__bottom {
+		margin-top: 24px;
+	}
+}

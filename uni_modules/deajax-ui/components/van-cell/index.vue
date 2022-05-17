@@ -137,6 +137,10 @@ export default {
 				uni.redirectTo({
 					url: this.url
 				});
+			} else {
+				uni.navigateTo({
+					url: this.url
+				});
 			}
 		}
 	}

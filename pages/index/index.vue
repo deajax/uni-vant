@@ -14,14 +14,15 @@
 		</van-cell-group>
 
 		<van-cell-group inset title="展示组件">
-			<!-- <van-cell title="Divider 分割线" url="/pages/divider/divider" is-link />
+			<van-cell title="Divider 分割线" url="/pages/divider/divider" is-link />
 			<van-cell title="Empty 空状态" url="/pages/empty/empty" is-link />
-			<van-cell title="NoticeBar 通知栏" url="/pages/notice-bar/notice-bar" is-link />
+			<!-- <van-cell title="NoticeBar 通知栏" url="/pages/notice-bar/notice-bar" is-link />
 			<van-cell title="Progress 进度条" url="/pages/progress/progress" is-link /> -->
 			<van-cell title="Tag 标签" url="/pages/tag/tag" is-link />
 		</van-cell-group>
 
 		<van-cell-group inset title="导航组件">
+			<van-cell title="Grid 宫格" url="/pages/grid/grid" is-link />
 			<van-cell title="Tabs 选项卡" url="/pages/tabs/tabs" is-link />
 		</van-cell-group>
 

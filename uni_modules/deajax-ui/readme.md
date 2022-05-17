@@ -1,8 +1,20 @@
 ## 已实现组件：
 
-#### Button 按钮、Cell 单元格、Icon 图标、Layout 布局、Style 内置样式、Search 搜索、Stepper 步进器、Tag 标签、Tab 标签页、Card商品卡片
+### Button 按钮、Cell 单元格、Icon 图标、
 
-​          
+### Layout 布局、Style 内置样式、Search 搜索、
+
+### Stepper 步进器、Tag 标签、Tab 标签页、
+
+### Card商品卡片、Divider 分割线、
+
+### Empty 空状态、Grid 宫格
+
+​    
+
+------
+
+​           
 
 
 >
@@ -699,3 +711,121 @@ export default {
 | :----- | :------------- | :------- |
 | @close | 关闭标签时触发 | -        |
 | @click | 点击时触发     | -        |
+
+​    
+
+## Divider 分割线
+
+示例：
+
+```vue
+<template>
+	<van-divider />
+</template>
+```
+
+### Props
+
+| 参数             | 说明                              | 类型      | 默认值 |
+| :--------------- | :-------------------------------- | :-------- | :----- |
+| dashed           | 虚线                              | *boolean* | false  |
+| hairline         | 细线                              | *boolean* | false  |
+| content-position | 文本位置，`left` `center` `right` | *string*  | -      |
+| custom-style     | 自定义样式                        | *string*  | -      |
+| font-size        | 字体大小                          | string    | -      |
+| text-color       | 文本颜色                          | string    | -      |
+| border-color     | border 颜色                       | string    | -      |
+
+### Slot
+
+| 名称 | 说明           |
+| :--- | :------------- |
+| 默认 | 自定义文本内容 |
+
+​    
+
+​    
+
+## Empty 空状态
+
+示例：
+
+```vue
+<template>
+	<van-empty description="描述文字" />
+</template>
+```
+
+### Props
+
+| 参数        | 说明                                                         | 类型     | 默认值    |
+| :---------- | :----------------------------------------------------------- | :------- | :-------- |
+| image       | 图片类型，可选值为 `error` `network` `search`，支持传入图片 URL | *string* | `default` |
+| description | 图片下方的描述文字                                           | *string* | -         |
+
+### Slots
+
+| 名称        | 说明           |
+| :---------- | :------------- |
+| -           | 自定义底部内容 |
+| image       | 自定义图标     |
+| description | 自定义描述文字 |
+
+​    
+
+​    
+
+## Grid 宫格
+
+示例：
+
+```vue
+<template>
+	<van-grid>
+    <van-grid-item icon="ri-image-line" text="文字" />
+    <van-grid-item icon="ri-image-line" text="文字" />
+    <van-grid-item icon="ri-image-line" text="文字" />
+    <van-grid-item icon="ri-image-line" text="文字" />
+  </van-grid>
+</template>
+```
+
+### Grid Props
+
+| 参数       | 说明                                      | 类型      | 默认值     |
+| :--------- | :---------------------------------------- | :-------- | :--------- |
+| column-num | 列数                                      | *number*  | `4`        |
+| icon-size  | 图标大小，默认单位为`px`                  | *string*  | `26px`     |
+| border     | 是否显示边框                              | *boolean* | `true`     |
+| center     | 是否将格子内容居中显示                    | *boolean* | `true`     |
+| square     | 是否将格子固定为正方形                    | *boolean* | `false`    |
+| clickable  | 是否开启格子点击反馈                      | *boolean* | `false`    |
+| direction  | 格子内容排列的方向，可选值为 `horizontal` | *string*  | `vertical` |
+| reverse    | 是否调换图标和文本的位置                  | *boolean* | `false`    |
+| use-slot   | 是否使用自定义内容的插槽                  | *boolean* | `false`    |
+
+### GridItem Props
+
+| 参数       | 说明                                                         | 类型               | 默认值       |
+| :--------- | :----------------------------------------------------------- | :----------------- | :----------- |
+| text       | 文字                                                         | *string*           | -            |
+| icon       | 图标名称或图片链接，可选值见 [Icon 组件](https://youzan.github.io/vant-weapp/#/icon) | *string*           | -            |
+| icon-color | 图标颜色                                                     | *string*           | -            |
+| dot        | 是否显示图标右上角小红点                                     | *boolean*          | `false`      |
+| badge      | 图标右上角徽标的内容                                         | *string \| number* | -            |
+| url        | 点击后跳转的链接地址                                         | *string*           | -            |
+| link-type  | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch`   | *string*           | `navigateTo` |
+
+### GridItem Events
+
+| 事件名 | 说明           | 回调参数 |
+| :----- | :------------- | :------- |
+| @click | 点击格子时触发 | -        |
+
+### GridItem Slots
+
+| 名称 | 说明                                                   |
+| :--- | :----------------------------------------------------- |
+| -    | 自定义宫格的所有内容，需要设置`use-slot`属性           |
+| icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
+| text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
