@@ -23,6 +23,7 @@
 
 		<van-cell-group inset title="导航组件">
 			<van-cell title="Grid 宫格" url="/pages/grid/grid" is-link />
+			<van-cell title="NavBar 导航栏" url="/pages/nav-bar/nav-bar" is-link />
 			<van-cell title="Tabs 选项卡" url="/pages/tabs/tabs" is-link />
 		</van-cell-group>
 

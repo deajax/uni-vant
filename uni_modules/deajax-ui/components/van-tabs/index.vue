@@ -16,9 +16,8 @@
 				<slot name="nav-left"></slot>
 				<scroll-view
 					:scroll-x="scrollable"
-					:scroll-into-view="scrollId"
 					:scroll-with-animation="scrollWithAnimation"
-					:scroll-left="scrollLeft"
+					:scroll-left="scrollIntoView"
 					:class="[
 						'van-tabs__scroll',
 						type === 'line' ? 'van-tabs__scroll--line' : 'van-tabs__scroll--card'
@@ -28,18 +27,24 @@
 					<view
 						:class="[
 							'van-tabs__nav',
-							type === 'line' ? 'van-tabs__nav--line' : 'van-tabs__nav--card'
+							type === 'line' ? 'van-tabs__nav--line' : 'van-tabs__nav--card',
+							{ 'van-tabs__nav--complete': !ellipsis }
 						]"
 					>
 						<view
-							v-if="type === 'line'"
+							v-if="type === 'line' && showLine"
 							class="van-tabs__line"
 							:style="[lineStyle, { transform: `translateX(${lineOffsetLeft}px)` }]"
 						></view>
 						<view
-							:id="`van-tab_${item.name}`"
 							v-for="(item, index) in navList"
-							:class="['van-tab', `van-tab_${item.name}`, tabCls(item)]"
+							:id="`van-tab_${item.name}`"
+							:class="[
+								'van-tab',
+								`van-tab_${item.name}`,
+								{ 'van-tab--complete': !ellipsis },
+								tabCls(item)
+							]"
 							:style="[
 								tabCls(item) == 'van-tab--active'
 									? { color: titleActiveColor || color }
@@ -113,6 +118,10 @@ export default {
 			type: Boolean,
 			default: true
 		},
+		showLine: {
+			type: Boolean,
+			default: true
+		},
 		lineWidth: {
 			type: String,
 			default: '40'
@@ -156,30 +165,29 @@ export default {
 	},
 	data() {
 		return {
-			scrollId: 'van-tab_0',
+			scrollId: 'van-tab_1',
 			currentValue: this.value,
 			navList: [],
 			scrollLeft: 0,
 			lineOffsetLeft: 0,
+			scrollIntoView: 0,
 			scrollable: false,
-			scrollWithAnimation: true
+			scrollWithAnimation: true,
+			tabWidth: []
 		};
 	},
 	mounted() {
-		const query = uni.createSelectorQuery().in(this);
-		query
-			.select('.van-tabs__nav')
-			.boundingClientRect(data => {
-				this.scrollLabelWidth = (data.width / 100) * 22;
-				this.labelWidth = data.width / this.navList.length;
-
-				if (this.scrollable) {
-					this.lineOffsetLeft = this.scrollLabelWidth / 2 - this.lineWidth / 2;
-				} else {
-					this.lineOffsetLeft = this.labelWidth / 2 - this.lineWidth / 2;
-				}
-			})
-			.exec();
+		setTimeout(() => {
+			const query = uni.createSelectorQuery().in(this);
+			query
+				.select('#van-tab_1')
+				.boundingClientRect(data => {
+					console.log(data.width);
+					this.lineOffsetLeft =
+						(data.width - this.lineWidth) / 2 + (this.ellipsis ? 0 : 8);
+				})
+				.exec();
+		}, 100);
 	},
 	methods: {
 		tabCls(item) {
@@ -224,25 +232,52 @@ export default {
 			});
 		},
 		handleChange(index) {
+			const oldCurrentValue = this.currentValue;
 			let nav = this.navList[index];
 			let name = nav.name;
 			this.currentValue = name;
 			this.$emit('click', name);
-			this.navCurrent = nav.name - 1;
-			if (this.scrollable) {
-				this.lineOffsetLeft =
-					this.scrollLabelWidth / 2 -
-					this.lineWidth / 2 +
-					this.navCurrent * this.scrollLabelWidth;
-			} else {
-				this.lineOffsetLeft =
-					this.labelWidth / 2 - this.lineWidth / 2 + this.navCurrent * this.labelWidth;
-			}
-			if (this.animated) {
-				this.scrollLeft = -100 * this.navCurrent;
-			}
-			this.scrollId = `van-tab_${nav.name - 1}`;
+			this.scrollId = `van-tab_${nav.name}`;
+			const min = parseInt(
+				oldCurrentValue > this.currentValue ? this.currentValue : oldCurrentValue
+			);
+			const max = parseInt(
+				oldCurrentValue > this.currentValue ? oldCurrentValue : this.currentValue
+			);
+			if (min == max) return;
+			const query = uni.createSelectorQuery().in(this);
+			const tabWidth = [];
+			query
+				.selectAll('.van-tab')
+				.boundingClientRect(data => {
+					const tabWidth = data.map(t => {
+						return { id: t.id.replace('van-tab_', ''), width: t.width, left: t.left };
+					});
+					const minItem = tabWidth.filter(t => t.id == min)[0];
+					let width = minItem ? parseInt((minItem.width - this.lineWidth) / 2) : 0;
+					width = width > 0 ? width : 0;
+					for (let i = min + 1; i <= max; i++) {
+						const item = tabWidth.filter(t => t.id == i)[0];
+						if (item) {
+							width += item.width;
+							if (i == max) {
+								const right = parseInt((item.width - this.lineWidth) / 2);
+								if (right > 0) {
+									width = width - right;
+								}
+							}
+						}
+					}
+					width = width * (min == oldCurrentValue ? 1 : -1);
+					this.lineOffsetLeft += width;
+					this.scrollIntoView =
+						this.lineOffsetLeft -
+						(tabWidth[index].width * tabWidth.length - tabWidth[index].width) / 2;
+					// console.log(tabWidth, width, oldCurrentValue, this.currentValue);
+				})
+				.exec();
 		},
+
 		onTouchStart() {},
 		onTouchMove() {},
 		onTouchEnd() {}

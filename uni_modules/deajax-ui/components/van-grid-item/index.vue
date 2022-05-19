@@ -26,7 +26,7 @@
 						:class="icon"
 						:style="[
 							iconSize ? { 'font-size': iconSize } : '',
-							iconColor ? { color: iconColor } : ''
+							iconColor ? { 'color': iconColor } : ''
 						]"
 					>
 						<view v-if="badge || dot" :class="['van-info', { 'van-info--dot': dot }]">

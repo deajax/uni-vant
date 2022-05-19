@@ -13,7 +13,7 @@
 					inputAlign ? 'van-search__align-' + inputAlign : ''
 				]"
 			>
-				<slot v-if="useLeftIconSlot" name="left-icon" slot="left-icon" />
+				<slot v-if="useLeftIconSlot" name="left-icon" />
 				<view v-else class="van-search__left-icon ri-search-line"></view>
 				<input
 					class="van-search__field"
@@ -33,7 +33,7 @@
 					@blur="onBlur"
 					@confirm="onSearch"
 				/>
-				<slot v-if="useRightIconSlot" name="right-icon" slot="right-icon" />
+				<slot v-if="useRightIconSlot" name="right-icon" />
 				<view v-else class="van-search__right-icon"></view>
 			</view>
 		</view>

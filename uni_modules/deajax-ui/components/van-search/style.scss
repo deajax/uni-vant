@@ -20,6 +20,7 @@
 		display: flex;
 		flex: 1;
 		line-height: var(--search-input-height, 34px);
+		text-align: left;
 	}
 
 	&__label {

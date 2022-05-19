@@ -8,7 +8,7 @@
 
 ### Card商品卡片、Divider 分割线、
 
-### Empty 空状态、Grid 宫格
+### Empty 空状态、Grid 宫格、NavBar 导航栏
 
 ​    
 
@@ -57,7 +57,7 @@
 
 **使用方法**
 
-从插件市场下载后配置pages.json文件：
+1、从插件市场下载后配置pages.json文件：
 
 ```json
 "easycom": {
@@ -67,6 +67,19 @@
 		}
 }
 ```
+
+2、在App.vue的style中引入 **基础样式** 和 **图标库**
+
+```vue
+<style lang="scss">
+  //引入基础样式
+  @import '@/uni_modules/deajax-ui/common/style.scss';
+  //引入图标库
+  @import '@/uni_modules/deajax-ui/remixicon/remixicon.scss';
+</style>
+```
+
+​          
 
 **自定义样式**
 
@@ -97,6 +110,88 @@ style.scss:
   --van-cell-vertical-padding: 16px;
   --van-cell-horizontal-padding: 24px;
 }
+```
+
+​    
+
+## 基础样式变量
+
+用以下变量覆盖uni.scss的原有内容或添加在uni.scss中，即可在全局使用此变量。
+
+此变量为 Vant 组件的主题样式规范。
+
+```scss
+// Color Palette
+$van-black: #000;
+$van-white: #fff;
+$van-gray-1: #f7f8fa;
+$van-gray-2: #f2f3f5;
+$van-gray-3: #ebedf0;
+$van-gray-4: #dcdee0;
+$van-gray-5: #c8c9cc;
+$van-gray-6: #969799;
+$van-gray-7: #646566;
+$van-gray-8: #323233;
+$van-red: #ee0a24;
+$van-blue: #1989fa;
+$van-orange: #ff976a;
+$van-orange-dark: #ed6a0c;
+$van-orange-light: #fffbe8;
+$van-green: #07c160;
+
+// Gradient Colors
+$van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+$van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+$van-primary-color: $van-blue;
+$van-success-color: $van-green;
+$van-danger-color: $van-red;
+$van-warning-color: $van-orange;
+$van-text-color: $van-gray-8;
+$van-text-color-2: $van-gray-6;
+$van-text-color-3: $van-gray-5;
+$van-text-link-color: #576b95;
+$van-active-color: $van-gray-2;
+$van-active-opacity: 0.6;
+$van-disabled-opacity: 0.5;
+$van-background-color: $van-gray-1;
+$van-background-color-light: $van-white;
+
+// Padding
+$van-padding-base: 4px;
+$van-padding-xs: 8px;
+$van-padding-sm: 12px;
+$van-padding-md: 16px;
+$van-padding-lg: 24px;
+$van-padding-xl: 32px;
+
+// Font
+$van-font-size-xs: 10px;
+$van-font-size-sm: 12px;
+$van-font-size-md: 14px;
+$van-font-size-lg: 16px;
+$van-font-weight-bold: 500;
+$van-line-height-xs: 14px;
+$van-line-height-sm: 18px;
+$van-line-height-md: 20px;
+$van-line-height-lg: 22px;
+$van-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+$van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+
+// Animation
+$van-animation-duration-base: 0.3s;
+$van-animation-duration-fast: 0.2s;
+$van-animation-timing-function-enter: ease-out;
+$van-animation-timing-function-leave: ease-in;
+
+// Border
+$van-border-color: $van-gray-3;
+$van-border-width-base: 1px;
+$van-border-radius-sm: 2px;
+$van-border-radius-md: 4px;
+$van-border-radius-lg: 8px;
+$van-border-radius-max: 999px;
 ```
 
 ​    
@@ -829,3 +924,54 @@ export default {
 | -    | 自定义宫格的所有内容，需要设置`use-slot`属性           |
 | icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
 | text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
+
+​    
+
+​    
+
+## NavBar 导航栏
+
+示例：
+
+```vue
+<template>
+	<van-nav-bar
+  title="标题"
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/>
+</template>
+```
+
+### Props
+
+| 参数                | 说明                               | 类型      | 默认值  |
+| :------------------ | :--------------------------------- | :-------- | :------ |
+| title               | 标题                               | *string*  | `''`    |
+| left-text           | 左侧文案                           | *string*  | `''`    |
+| right-text          | 右侧文案                           | *string*  | `''`    |
+| left-arrow          | 是否显示左侧箭头                   | *boolean* | `false` |
+| fixed               | 是否固定在顶部                     | *boolean* | `false` |
+| placeholder         | 固定在顶部时是否开启占位           | *boolean* | `false` |
+| border              | 是否显示下边框                     | *boolean* | `true`  |
+| hover               | 是否开启点击反馈                   | *boolean* | `true`  |
+| z-index             | 元素 z-index                       | *number*  | `1`     |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `true`  |
+
+### Slot
+
+| 名称  | 说明               |
+| :---- | :----------------- |
+| title | 自定义标题         |
+| left  | 自定义左侧区域内容 |
+| right | 自定义右侧区域内容 |
+
+### Events
+
+| 事件名 | 说明               | 参数 |
+| :----- | :----------------- | :--- |
+| @left  | 点击左侧按钮时触发 | -    |
+| @right | 点击右侧按钮时触发 | -    |

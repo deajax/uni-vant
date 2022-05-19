@@ -1,7 +1,7 @@
 <template>
 	<view
 		:class="['van-icon', name]"
-		:style="[color ? colorStyle : '', size ? fontSize : '']"
+		:style="[color ? { color: color } : '', size ? { fontSize: size + 'px' } : '']"
 		@click="onClick"
 	></view>
 </template>
@@ -21,18 +21,6 @@ export default {
 	},
 	data() {
 		return {};
-	},
-	computed: {
-		colorStyle() {
-			return {
-				color: `${this.color}`
-			};
-		},
-		fontSize() {
-			return {
-				fontSize: `${this.size}px`
-			};
-		}
 	},
 	methods: {
 		onClick(e) {
