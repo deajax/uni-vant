@@ -98,7 +98,15 @@
 				"navigationBarTitleText": "导航栏"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/loading/loading",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "loading"
+            }
+            
+        }
+    ],
 	"tabBar": {
 		"list": [{
 				"pagePath": "pages/tabbar/page1",

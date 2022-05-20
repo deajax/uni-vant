@@ -1,13 +1,11 @@
-$color-primary: #ff4b08;
-
 .van-card {
 	.van-cell {
 		padding: 12px 16px;
-		
+
 		&__title {
 			overflow: hidden;
 		}
-		
+
 		&__label {
 			margin-top: 0;
 		}
@@ -22,7 +20,7 @@ $color-primary: #ff4b08;
 		line-height: 13px;
 		padding: 2px 4px;
 		border-radius: 4px;
-		background: var(--van-card-primary-color, $color-primary);
+		background: var(--van-card-primary-color, #1989fa);
 		color: white;
 	}
 
@@ -35,7 +33,7 @@ $color-primary: #ff4b08;
 		border-radius: 6px;
 		margin-right: var(--van-card-thumb-gap, 12px);
 
-		image {
+		&--image {
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -87,10 +85,26 @@ $color-primary: #ff4b08;
 	}
 
 	&__price {
-		color: var(--van-card-primary-color, $color-primary);
+		color: var(--van-card-primary-color, #1989fa);
 
 		&::before {
 			content: '¥';
+		}
+
+		.price {
+			font-size: 16px;
+		}
+
+		.van-card__unit-text {
+			margin-left: 4px;
+			color: var(--van-card-unit-color, #969799);
+			font-size: 10px;
+			vertical-align: top;
+
+			&::before {
+				content: '/';
+				margin-right: 2px;
+			}
 		}
 	}
 
@@ -112,7 +126,7 @@ $color-primary: #ff4b08;
 		margin-left: auto;
 		color: var(--van-card-number-color, #969799);
 
-		>text::before {
+		&-text::before {
 			content: '\EB99';
 			font-family: remixicon !important;
 			font-style: normal;
@@ -138,7 +152,7 @@ $color-primary: #ff4b08;
 			margin-right: 0;
 			margin-bottom: var(--van-card-thumb-gap, 8px);
 
-			image {
+			&--image {
 				position: absolute;
 				z-index: 1;
 			}

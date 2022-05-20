@@ -14,27 +14,28 @@
 			v-if="title || label || $slots.title"
 		>
 			<text v-if="title">{{ title }}</text>
-			<slot v-else-if="$slots.title" name="title" />
+			<slot v-else-if="$slots.title" name="title"></slot>
 
 			<view class="van-cell__label" v-if="label || $slots.label">
 				<template v-if="label">
 					{{ label }}
 				</template>
-				<slot v-else name="label" />
+				<slot v-else name="label"></slot>
 			</view>
 		</view>
 
-		<view class="van-cell__value" v-if="value || $slots.value">
-			<template>
+		<view class="van-cell__value" v-if="value || $slots.default">
+			<template v-if="value">
 				{{ value }}
 			</template>
-			<slot name="value" />
+			<slot></slot>
 		</view>
+		<view  v-else style="display: none;"><slot></slot></view>
 
 		<view class="van-cell__right-icon van-cell--arrow" v-if="isLink"></view>
 		<slot v-else name="right-icon"></slot>
 
-		<slot name="extra" />
+		<slot name="extra"></slot>
 	</view>
 </template>
 

@@ -12,6 +12,10 @@
 			<van-cell title="Search 搜索" url="/pages/search/search" is-link />
 			<van-cell title="Stepper 步进器" url="/pages/stepper/stepper" is-link />
 		</van-cell-group>
+		
+		<van-cell-group inset title="展示组件">
+			<van-cell title="Loading 加载" url="/pages/loading/loading" is-link />
+		</van-cell-group>
 
 		<van-cell-group inset title="展示组件">
 			<van-cell title="Divider 分割线" url="/pages/divider/divider" is-link />

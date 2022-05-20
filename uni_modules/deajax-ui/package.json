@@ -2,7 +2,7 @@
 	"id": "deajax-ui",
 	"name": "deajax-ui",
 	"displayName": "模仿vant的uni组件",
-	"version": "0.3.15",
+	"version": "0.3.16",
 	"description": "根据vant组件的属性和样式，模仿自写的uni组件",
 	"keywords": [
         "vant",

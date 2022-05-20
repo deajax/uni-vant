@@ -40,18 +40,15 @@
 		@opensetting="onOpenSetting"
 	>
 		<template v-if="loading">
-			<view :class="['van-button__loading']" :style="[loadingFont]">
-				<view
-					:class="[
-						loadingType == 'circular'
-							? 'ri-loader-4-line'
-							: loadingType == 'spinner'
-							? 'ri-loader-2-line'
-							: 'ri-loader-4-line'
-					]"
-				/>
-			</view>
-			<view v-if="loadingText" class="van-button__loading-text">{{ loadingText }}</view>
+			<van-loading
+				:size="loadingSize"
+				:type="loadingType"
+				:color="type == 'default' ? '' : '#fff'"
+			>
+				<view v-if="loadingText" class="van-button__loading-text">
+					{{ loadingText }}
+				</view>
+			</van-loading>
 		</template>
 		<template v-else>
 			<view v-if="icon" :class="['van-button__icon', icon]"></view>
@@ -61,8 +58,12 @@
 </template>
 
 <script>
+import vanLoading from '../van-loading/index.vue';
 export default {
 	name: 'Button',
+	components: {
+		vanLoading
+	},
 	options: {
 		multipleSlots: true,
 		styleIsolation: 'shared',
@@ -93,7 +94,7 @@ export default {
 		},
 		loadingSize: {
 			type: String,
-			default: '20px'
+			default: '20'
 		},
 		customStyle: String,
 		openType: String,
@@ -112,9 +113,7 @@ export default {
 		formType: String
 	},
 	data() {
-		return {
-			loadingColor: ''
-		};
+		return {};
 	},
 	computed: {
 		colorStyle() {

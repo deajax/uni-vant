@@ -8,7 +8,9 @@
 
 ### Card商品卡片、Divider 分割线、
 
-### Empty 空状态、Grid 宫格、NavBar 导航栏
+### Empty 空状态、Grid 宫格、NavBar 导航栏、
+
+### Loading 加载
 
 ​    
 
@@ -311,25 +313,25 @@ page {
 
 #### Props
 
-| 参数             | 说明                                                 | 类型             | 默认值     |
-| ---------------- | ---------------------------------------------------- | ---------------- | ---------- |
-| icon             | 左侧图标名称                                         | String           | -          |
-| title            | 左侧标题                                             | [String, Number] | -          |
-| title-width      | 标题宽度，须包含单位                                 | String           | -          |
-| value            | 右侧内容                                             | [String, Number] | -          |
-| label            | 标题下方的描述信息                                   | [String, Number] | -          |
-| size             | 单元格大小，可选值为 large                           | String           | -          |
-| border           | 是否显示下边框                                       | Boolean          | true       |
-| center           | 是否使内容垂直居中                                   | Boolean          | false      |
-| url              | 点击后跳转的链接地址                                 | String           | -          |
-| clickable        | 是否开启点击反馈                                     | Boolean          | false      |
-| is-link          | 是否展示右侧箭头并开启点击反馈                       | Boolean          | false      |
-| link-type v0.1.1 | 链接跳转类型，可选值为 redirectTo switchTab reLaunch | String           | navigateTo |
+| 参数             | 说明                                                        | 类型             | 默认值     |
+| ---------------- | ----------------------------------------------------------- | ---------------- | ---------- |
+| icon             | 左侧图标名称                                                | String           | -          |
+| title            | 左侧标题                                                    | [String, Number] | -          |
+| title-width      | 标题宽度，须包含单位                                        | String           | -          |
+| value            | 右侧内容                                                    | [String, Number] | -          |
+| label            | 标题下方的描述信息                                          | [String, Number] | -          |
+| size             | 单元格大小，可选值为 `large`                                | String           | -          |
+| border           | 是否显示下边框                                              | Boolean          | true       |
+| center           | 是否使内容垂直居中                                          | Boolean          | false      |
+| url              | 点击后跳转的链接地址                                        | String           | -          |
+| clickable        | 是否开启点击反馈                                            | Boolean          | false      |
+| is-link          | 是否展示右侧箭头并开启点击反馈                              | Boolean          | false      |
+| link-type v0.1.1 | 链接跳转类型，可选值为 `redirectTo` `switchTab ` `reLaunch` | String           | navigateTo |
 
 #### Slot
 | 名称       | 说明                                                       |
 | ---------- | ---------------------------------------------------------- |
-| value      | 自定义value显示内容，如果设置了value属性则不生效           |
+| -          | 自定义value显示内容，如果设置了value属性则不生效           |
 | title      | 自定义title显示内容，如果设置了title属性则不生效           |
 | label      | 自定义label显示内容                                        |
 | icon       | 自定义icon显示内容，如果设置了icon属性则不生效             |
@@ -382,12 +384,13 @@ export default {
 | desc       | 描述                              | String         |                                       |
 | num        | 商品数量                          | [String, Number] | 1                                   |
 | thumb      | 左侧图片 URL                      | String         | -                                   |
-| thumb-mode | 图片模式，同uni image组件的mode属性 | String         | 'aspectFill'                        |
+| thumb-mode | 图片模式，同[uni image](https://uniapp.dcloud.io/component/image.html)组件的[mode](https://uniapp.dcloud.io/component/image.html)属性 | String         | 'aspectFill'                        |
 | thumb-size | 左侧图片尺寸，单位尺寸px          | String         | css定义横向默认80，竖向100%且为正方形 |
 | tag        | 图片角标                          | String         | -                                   |
 | tag-style  | 图片角标样式                      | Object         | -                                   |
 | price      | 商品价格                          | [String, Number] | 0.00                                |
 | origin-price | 商品划线原价                      | [String, Number] | 0.00                                |
+| unit `v0.3.16` | 商品单位 | String | 斤 |
 | clickable  | 是否开启点击反馈                  | Boolean        | true                               |
 
 ####  Slot
@@ -531,7 +534,9 @@ remixicon图标库git：https://github.com/Remix-Design/remixicon
 
 ## Button 按钮
 
->   因为loading组件还没有做，所以写了一个简易版的button loading，和官方的loading效果有区别
+>   ~~因为loading组件还没有做，所以写了一个简易版的button loading，和官方的loading效果有区别~~
+>
+>   0.3.16 已更换为van-loading组件。
 
 示例：
 
@@ -546,8 +551,8 @@ remixicon图标库git：https://github.com/Remix-Design/remixicon
 | 参数               | 说明                                                         | 类型    | 默认值       |
 | :----------------- | :----------------------------------------------------------- | :------ | :----------- |
 | id                 | 标识符                                                       | string  | -            |
-| type               | 按钮类型，可选值为 primary info warning danger               | string  | default      |
-| size               | 按钮尺寸，可选值为 normal large small mini                   | string  | normal       |
+| type               | 按钮类型，可选值为 `primary` ` info` `warning` `danger`      | string  | default      |
+| size               | 按钮尺寸，可选值为 `normal` `large` `small` `mini`           | string  | normal       |
 | color              | 按钮颜色，支持传入linear-gradient渐变色                      | string  | -            |
 | icon               | 左侧图标名称或图片链接，可选值见 [Icon 组件]                 | string  | -            |
 | plain              | 是否为朴素按钮                                               | boolean | false        |
@@ -559,7 +564,7 @@ remixicon图标库git：https://github.com/Remix-Design/remixicon
 | loading            | 是否显示为加载状态                                           | boolean | false        |
 | loading-text       | 加载状态提示文字                                             | string  | -            |
 | loading-type       | 加载状态图标类型，可选值为 spinner                           | string  | circular     |
-| loading-size       | 加载图标大小                                                 | string  | 20px         |
+| loading-size       | 加载图标大小                                                 | string  | 20           |
 | custom-style       | 自定义样式                                                   | string  | -            |
 | open-type          | 微信开放能力，具体支持可参考 微信官方文档                    | string  | -            |
 | app-parameter      | 打开 APP 时，向 APP 传递的参数                               | string  | -            |
@@ -614,7 +619,7 @@ export default {
 | :------------------ | :----------------------------------------------------------- | :--------------- | :------ |
 | name                | 在表单内提交时的标识符                                       | string           | -       |
 | label               | 搜索框左侧文本                                               | string           | -       |
-| shape               | 形状，可选值为 round                                         | string           | square  |
+| shape               | 形状，可选值为 `round`                                       | string           | square  |
 | value               | 当前输入的值                                                 | string \| number | -       |
 | background          | 搜索框背景色                                                 | string           | #f2f2f2 |
 | show-action         | 是否在搜索框右侧显示取消按钮                                 | boolean          | false   |
@@ -624,10 +629,10 @@ export default {
 | disabled            | 是否禁用输入框                                               | boolean          | false   |
 | readonly            | 是否只读                                                     | boolean          | false   |
 | maxlength           | 最大输入长度，设置为 -1 的时候不限制最大长度                 | number           | -1      |
-| use-action-slot     | 是否使用 action slot                                         | boolean          | false   |
+| use-action-slot     | 是否使用 `action slot`                                       | boolean          | false   |
 | placeholder         | 输入框为空时占位符                                           | string           | -       |
 | placeholder-style   | 指定占位符的样式                                             | string           | -       |
-| input-align         | 输入框内容对齐方式，可选值为 center right                    | string           | left    |
+| input-align         | 输入框内容对齐方式，可选值为 `center` `right`                | string           | left    |
 | use-left-icon-slot  | 是否使用输入框左侧图标 slot                                  | boolean          | false   |
 | use-right-icon-slot | 是否使用输入框右侧图标 slot                                  | boolean          | false   |
 | left-icon           | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-left-icon-slot，则该属性无效） | string           | search  |
@@ -975,3 +980,34 @@ export default {
 | :----- | :----------------- | :--- |
 | @left  | 点击左侧按钮时触发 | -    |
 | @right | 点击右侧按钮时触发 | -    |
+
+​    
+
+​    
+
+# Loading 加载
+
+示例：
+
+```vue
+<template>
+	<van-loading />
+	<van-loading type="spinner" />
+</template>
+```
+
+### Props
+
+| 参数      | 说明                          | 类型               | 默认值     |
+| :-------- | :---------------------------- | :----------------- | :--------- |
+| color     | 颜色                          | *string*           | `#c8c9cc`  |
+| type      | 类型，可选值为 `spinner`      | *string*           | `circular` |
+| size      | 加载图标大小，默认单位为 `px` | *string \| number* | `30`       |
+| text-size | 文字大小，默认单位为为 `px`   | *string \| number* | `14`       |
+| vertical  | 是否垂直排列图标和文字内容    | *boolean*          | `false`    |
+
+### Slots
+
+| 名称 | 说明     |
+| :--- | :------- |
+| -    | 加载文案 |

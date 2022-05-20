@@ -85,7 +85,7 @@ export default {
 		},
 		background: {
 			type: String,
-			default: '#ffffff'
+			default: '#fff'
 		},
 		maxlength: {
 			type: Number,

@@ -1,4 +1,13 @@
+## 0.3.16（2022-05-20）
+- 新增 Loading 加载 组件
+- button组件的loading换为组件
+- 修改了tabs滑动线的一些逻辑
+- cell组件value slot改为默认slot
+- 增加了card组件一个unit单位的props字段
+- 修复了若干组件的bug
+- 修改了一些组件的样式
 ## 0.3.15（2022-05-19）
+
 修改了tabs的一些bug
 ## 0.3.14（2022-05-18）
 新增NavBar 导航栏组件

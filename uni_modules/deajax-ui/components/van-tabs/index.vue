@@ -182,7 +182,6 @@ export default {
 			query
 				.select('#van-tab_1')
 				.boundingClientRect(data => {
-					console.log(data.width);
 					this.lineOffsetLeft =
 						(data.width - this.lineWidth) / 2 + (this.ellipsis ? 0 : 8);
 				})

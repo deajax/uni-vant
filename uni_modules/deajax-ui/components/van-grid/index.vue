@@ -40,7 +40,7 @@ export default {
 		};
 	},
 	data() {
-		const elId = `Uni_${Math.ceil(Math.random() * 10e5).toString(36)}`;
+		const elId = `van-grid_${Math.ceil(Math.random() * 10e5).toString(36)}`;
 		return {
 			elId,
 			width: 0
